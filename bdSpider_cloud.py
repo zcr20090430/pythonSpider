@@ -13,6 +13,7 @@ from email.header import Header
 
 
 def spiderMain(city):
+    # todo 需要本地数据库
     db = pymysql.connect(host='localhost', user='root', password='123456', database='databases', port=3306)
     cursor = db.cursor()
     cursor.execute("select * from bytedance where create_date = '%s'" % datetime.date.today() + " and city_name = '%s'" % city )
